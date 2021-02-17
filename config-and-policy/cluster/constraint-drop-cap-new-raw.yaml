@@ -1,5 +1,5 @@
 # Dropping CAP_NET_RAW with ACM Policy Controller
-apiversion: constraints.gatekeeper.sh/v1beta1
+apiVersion: constraints.gatekeeper.sh/v1beta1
 kind:  K8sPSPCapabilities
 metadata:
   name: forbid-cap-net-raw
