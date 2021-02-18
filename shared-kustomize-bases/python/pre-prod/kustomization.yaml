@@ -1,6 +1,0 @@
-resources:
-  - svc.yaml
-  - rollout.yaml
-
-configurations:
-  - https://argoproj.github.io/argo-rollouts/features/kustomize/rollout-transform.yaml

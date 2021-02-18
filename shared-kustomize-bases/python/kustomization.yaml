@@ -1,9 +1,6 @@
 resources:
-  - svc-canary.yaml
-  - svc-stable.yaml
   - svc.yaml
-  - rollout.yaml
-  - vsvc.yaml
+  - deployment.yaml
 
 configurations:
   - https://argoproj.github.io/argo-rollouts/features/kustomize/rollout-transform.yaml
