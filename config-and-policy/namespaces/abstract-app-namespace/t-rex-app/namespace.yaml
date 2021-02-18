@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: t-rex-app
-  labels:
-    cost-center: trexapp.anthos-config-management-demo.com
