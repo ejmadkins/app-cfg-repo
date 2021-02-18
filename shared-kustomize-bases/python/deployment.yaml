@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-world
+  name: image-serve
 spec:
   replicas: 3
   revisionHistoryLimit: 2
