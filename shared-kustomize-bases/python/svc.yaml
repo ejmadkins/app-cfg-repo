@@ -2,13 +2,13 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: hello-world
-  name: hello-world
+    app: replace
+  name: replace
 spec:
   ports:
   - name: http
     port: 80
     targetPort: 8080
   selector:
-    app: hello-world
+    app: replace
   type: LoadBalancer
