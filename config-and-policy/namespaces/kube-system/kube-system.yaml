@@ -5,3 +5,4 @@ metadata:
   labels:
     k8s-namespace: kube-system
     cost-center: kubesystem.anthos-config-management-demo.com
+    admission.gatekeeper.sh/ignore: "true"
