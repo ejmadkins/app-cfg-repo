@@ -16,6 +16,12 @@ spec:
       containers:
       - image: europe-west2-docker.pkg.dev/ejmadkins-app-ops/remote-registry/image-serve
         name: image-serve
+        env:
+          - name: URI
+            valueFrom:
+              configMapKeyRef:
+                name: cloud-env-configmap
+                key: environment
         ports:
         - containerPort: 8080
         securityContext:
