@@ -4,4 +4,4 @@ apiVersion: clusterregistry.k8s.io/v1alpha1
 metadata:
   name: gcp-pre-prod
   labels:
-    environment: gcp
+    environment: gcp-pre-prod
