@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: image
-  labels:
-    cost-center: image.anthos-config-management-demo.com

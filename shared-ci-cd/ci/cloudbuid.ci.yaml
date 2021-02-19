@@ -14,7 +14,7 @@ steps:
   - '-c'
   - |
      mkdir hydrated-manifests && \
-     skaffold render -f=skaffold.yaml -p=staging --loud=true --digest-source=remote --output=hydrated-manifests/staging.yaml && \
+     skaffold render -f=skaffold.yaml -p=pre-prod --loud=true --digest-source=remote --output=hydrated-manifests/pre-prod.yaml && \
      skaffold render -f=skaffold.yaml -p=prod --loud=true --digest-source=remote --output=hydrated-manifests/prod.yaml
 
 - name: 'gcr.io/$PROJECT_ID/cloudbuild-attestor'
@@ -24,7 +24,7 @@ steps:
   - -xe
   - -c
   - |
-     /scripts/check_vulnerabilities.sh -p $PROJECT_ID -i europe-west2-docker.pkg.dev/$PROJECT_ID/remote-registry/hello-world:$SHORT_SHA -t 9.5
+     /scripts/check_vulnerabilities.sh -p $PROJECT_ID -i europe-west2-docker.pkg.dev/$PROJECT_ID/remote-registry/image-serve:$SHORT_SHA -t 9.5
 
 - name: gcr.io/cloud-builders/gcloud
   entrypoint: 'bash'
@@ -68,10 +68,8 @@ steps:
      cd env-repo && \
      git checkout candidate && \
      git config user.email "ejmadkins@gmail.com" && \
-     cp ../hydrated-manifests/staging.yaml staging/staging.yaml && \
-     cp ../hydrated-manifests/prod.yaml prod/prod.yaml && \
-     sed -i 's/apiVersion: apps\/v1/apiVersion: argoproj.io\/v1alpha1/' prod/prod.yaml && \
-     sed -i 's/kind: Deployment/kind: Rollout/' prod/prod.yaml
+     cp ../hydrated-manifests/pre-prod.yaml pre-prod/pre-prod.yaml && \
+     cp ../hydrated-manifests/prod.yaml prod/prod.yaml
 
 - id: 'Push to Manifest to Env Repo'
   name: 'gcr.io/cloud-builders/git'
@@ -81,7 +79,7 @@ steps:
   - |
     set -x && \
     cd env-repo && \
-    git add staging/staging.yaml prod/prod.yaml && \
+    git add pre-prod/pre-prod.yaml prod/prod.yaml && \
     git commit -m "Deploying image ${SHORT_SHA} && \
     Built from commit ${COMMIT_SHA} of repository app-repo && \
     Author: $(git log --format='%an <%ae>' -n 1 HEAD)" && \
