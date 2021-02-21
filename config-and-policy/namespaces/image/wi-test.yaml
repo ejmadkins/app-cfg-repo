@@ -8,4 +8,14 @@ spec:
   - image: google/cloud-sdk:slim
     name: workload-identity-test
     command: ["sleep","infinity"]
+    resources:
+      limits:
+        cpu: "200m"
+        memory: "1Gi"     
+    securityContext:
+      runAsUser: 2000
+      allowPrivilegeEscalation: false
+      capabilities:
+        drop:
+        - NET_RAW   
   serviceAccountName: ksa-image
