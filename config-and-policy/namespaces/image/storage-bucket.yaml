@@ -3,7 +3,7 @@
   metadata:
     annotations:
       cnrm.cloud.google.com/project-id : ejmadkins-app-ops
-    name: krm-bucket
+    name: krm-bucket-new
   spec:
     lifecycleRule:
       - action:
