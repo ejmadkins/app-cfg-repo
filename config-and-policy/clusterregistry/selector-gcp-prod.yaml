@@ -1,8 +1,8 @@
 kind: ClusterSelector
 apiVersion: configmanagement.gke.io/v1
 metadata:
-  name: selector-gcp-prod
+  name: selector-gcp
 spec:
   selector:
     matchLabels:
-      environment: gcp-prod
+      environment: gcp
