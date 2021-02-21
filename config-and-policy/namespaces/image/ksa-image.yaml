@@ -3,5 +3,6 @@ kind: ServiceAccount
 metadata:
   annotations:
     iam.gke.io/gcp-service-account: gsa-image@ejmadkins-app-ops.iam.gserviceaccount.com
+    configsync.gke.io/cluster-name-selector: selector-gcp
   name: ksa-image
   namespace: image
