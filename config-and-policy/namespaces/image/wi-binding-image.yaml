@@ -6,8 +6,8 @@ spec:
   resourceRef:
     apiVersion: iam.cnrm.cloud.google.com/v1beta1
     kind: IAMServiceAccount
-    name: [gsa-image]
+    name: gsa-image
   bindings:
     - role: roles/iam.workloadIdentityUser
       members:
-        - serviceAccount:[PROJECT_ID].svc.id.goog[[image]/[ksa-image]]
+        - serviceAccount:ejmadkins-app-ops.svc.id.goog[image/ksa-image]
