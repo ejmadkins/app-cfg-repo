@@ -2,7 +2,8 @@
   kind: StorageBucket
   metadata:
     annotations:
-      cnrm.cloud.google.com/project-id : ejmadkins-app-ops
+      cnrm.cloud.google.com/project-id: ejmadkins-app-ops
+      configsync.gke.io/cluster-name-selector: selector-gcp
     name: krm-bucket-new
   spec:
     lifecycleRule:
