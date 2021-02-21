@@ -1,13 +1,13 @@
-#apiVersion: iam.cnrm.cloud.google.com/v1beta1
-#kind: IAMPolicy
-#metadata:
-#  name: wi-binding-image
-#spec:
-#  resourceRef:
-#    apiVersion: iam.cnrm.cloud.google.com/v1beta1
-#    kind: IAMServiceAccount
-#    name: gsa-image
-#  bindings:
-#    - role: roles/iam.workloadIdentityUser
-#      members:
-#        - serviceAccount:ejmadkins-app-ops.svc.id.goog[image/ksa-image]
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMPolicy
+metadata:
+  name: wi-binding-image
+spec:
+  resourceRef:
+    apiVersion: iam.cnrm.cloud.google.com/v1beta1
+    kind: IAMServiceAccount
+    name: gsa-image
+  bindings:
+    - role: roles/iam.workloadIdentityUser
+      members:
+        - serviceAccount:ejmadkins-app-ops.svc.id.goog[image/ksa-image]
