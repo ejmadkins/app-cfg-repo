@@ -5,3 +5,4 @@ metadata:
   name: gcp-pre-prod
   labels:
     environment: gcp
+    name: gcp-pre-prod
