@@ -4,3 +4,4 @@ metadata:
   name: gcp-prod
   labels:
     environment: gcp
+    name: gcp-prod
