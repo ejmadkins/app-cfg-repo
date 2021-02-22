@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
   name: cloud-env-configmap
   annotations:
-    configmanagement.gke.io/cluster-selector: selector-aws
+    configmanagement.gke.io/cluster-selector: selector-aws-prod
 data:
   environment: aws prod
 ---
