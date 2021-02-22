@@ -4,3 +4,4 @@ metadata:
   name: aws-prod
   labels:
     environment: aws
+    name: aws-prod
