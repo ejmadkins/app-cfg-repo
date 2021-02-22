@@ -1,0 +1,8 @@
+kind: ClusterSelector
+apiVersion: configmanagement.gke.io/v1
+metadata:
+  name: selector-aws-prod
+spec:
+  selector:
+    matchLabels:
+      name: aws-prod
