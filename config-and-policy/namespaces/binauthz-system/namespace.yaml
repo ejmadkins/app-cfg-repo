@@ -1,6 +1,8 @@
 apiVersion: v1
 kind: Namespace
 metadata:
+  annotations:
+    configsync.gke.io/cluster-name-selector: selector-aws
   labels:
     control-plane: binauthz-controller
     admission.gatekeeper.sh/ignore: "true"
