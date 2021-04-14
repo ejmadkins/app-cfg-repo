@@ -3,7 +3,6 @@
   metadata:
     annotations:
       cnrm.cloud.google.com/project-id: ejmadkins-app-ops
-      configsync.gke.io/cluster-name-selector: selector-gcp
     name: gizmo
   spec:
     lifecycleRule:
